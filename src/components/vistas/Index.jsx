@@ -1,6 +1,7 @@
 import React from "react";
 import "../../assets/styles/output.css";
 import { useState, useEffect } from "react";
+import Logo from '../../assets/img/logo-artificial-azul.svg'
 
 function Index() {
   useEffect(() => {
@@ -116,7 +117,7 @@ function Index() {
             <div className="mb-8 flex justify-center">
               <img
                 className="w-50"
-                src="../../assets/img/logo-artificial-azul.svg"
+                src={Logo}
                 alt=""
               />
             </div>
