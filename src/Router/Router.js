@@ -3,16 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from '../../App';
 import Index from '../vistas/Index';
  
-function Rutas() {
+export default function Router() {
   return (
-    <>
     <BrowserRouter>
-    <Routes>
+      <Routes>
         <Route path='/' element={<Index/>}/>
-    </Routes>
+        </Routes>
     </BrowserRouter>
-    </>
-  )
+  );
 }
-
-export default Rutas
