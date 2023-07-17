@@ -1,6 +1,7 @@
 import React from "react";
 import "../../assets/styles/output.css";
 import { useState, useEffect } from "react";
+import Logo from '../../assets/img/logo-artificial-azul.svg'
 
 function Index() {
   useEffect(() => {
@@ -116,13 +117,13 @@ function Index() {
             <div className="mb-8 flex justify-center">
               <img
                 className="w-50"
-                src="../../assets/img/logo-artificial-azul.svg"
+                src={Logo}
                 alt=""
               />
             </div>
             <div className="flex flex-col text-sm rounded-lg ">
               <input
-                className="mb-5 rounded-[10px] border p-3 focus:outline-none border-[#E2231A]"
+                className="mt-5 rounded-[10px] border p-3 focus:outline-none border-[#E2231A]"
                 type="text"
                 placeholder="Usuario"
                 name="Usuario"
@@ -136,11 +137,11 @@ function Index() {
                 )
                 .map((message) => (
                   <div>
-                    <span className="">{message.mensaje}</span>
+                    <span className="text-red-600">{message.mensaje}</span>
                   </div>
                 ))}
               <input
-                className=" mb-5 rounded-[10px] border p-3 w-80 focus:outline-none border-[#E2231A]"
+                className=" mt-5 rounded-[10px] border p-3 w-80 focus:outline-none border-[#E2231A]"
                 type="password"
                 placeholder="Contraseña"
                 name="Contrasena"
@@ -154,7 +155,7 @@ function Index() {
                 )
                 .map((message) => (
                   <div>
-                    <span className="">{message.mensaje}</span>
+                    <span className="text-red-600">{message.mensaje}</span>
                   </div>
                 ))}
               <button
