@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BsArrowLeftShort } from "react-icons/bs";
-import { FaHome, FaPaste, FaUserAltSlash, FaUserTie } from "react-icons/fa";
+import { FaHome, FaPaste, FaUserAltSlash, FaUserTie, FaImages, FaFolder } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/favicon.png"
 import logoComp from "../../assets/img/logo-artificial-blanco.svg"
@@ -59,7 +59,7 @@ export const Aside = () => {
                 }`}
           >
             <span className="text-xl block float-left">
-              < FaUserTie />
+              < FaFolder />
             </span>
             <span
               className={`text-base font-medium flex-1 duration-200 ${
@@ -71,7 +71,23 @@ export const Aside = () => {
           </li></Link>
 
           {/*Imagenes */}
-          <Link to="/departamento"><li
+          <Link to="#"><li
+            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md  mt-3
+                }`}
+          >
+            <span className="text-xl block float-left">
+              <FaImages />
+            </span>
+            <span
+              className={`text-base font-medium flex-1 duration-200 ${
+                !open && "hidden"
+              }`}
+            >
+              Imagenes
+            </span>
+          </li></Link>
+          {/*Reportes */}
+          <Link to="#"><li
             className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md  mt-3
                 }`}
           >
@@ -83,7 +99,7 @@ export const Aside = () => {
                 !open && "hidden"
               }`}
             >
-              Imagenes
+              Reportes
             </span>
           </li></Link>
           {/*Salir*/}
