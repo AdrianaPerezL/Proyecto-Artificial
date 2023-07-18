@@ -2,6 +2,8 @@ import { useState } from "react";
 import { BsArrowLeftShort } from "react-icons/bs";
 import { FaSpeakerDeck, FaUserAlt, FaCaretDown, FaHome, FaPaste, FaPrescriptionBottleAlt, FaPiggyBank, FaHospitalUser, FaUserAltSlash, FaUserTie } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import logo from "../../assets/img/favicon.png"
+import logoComp from "../../assets/img/logo-artificial-blanco.svg"
 
 
 export const Aside = () => {
@@ -11,7 +13,7 @@ export const Aside = () => {
   return (
     <nav className="fixed z-20">
       <div
-        className={` bg-dark-purple h-screen p-5 pt-8 ${
+        className={` bg-Azul h-screen p-5 pt-8 ${
           open ? "w-60" : "w-20"
         } duration-300 relative`}
       >
@@ -22,18 +24,16 @@ export const Aside = () => {
           onClick={() => setOpen(!open)}
         />
         <div className="inline-flex">
-          <img src="#" width={25}
+          <img src={logo} width={25}
             className={`text-white text-4xl rounded cursor-pointer block float-left mr-2 duration-500 ${
               open && "rotate-[360deg]"
-            }`}
+            } ${open && "scale-0"}`}
           />
-          <h1
-            className={`text-white origin-left font-medium text-lg duration-300 ${
+          <img src={logoComp}  width={160}
+            className={`text-white text-4xl rounded cursor-pointer block float-left mr-2 duration-500 ${
               !open && "scale-0"
             }`}
-          >
-            IMMANYOTL
-          </h1>
+          />
         </div>
         <ul className="pt-2">
           {/*Inicio */}
