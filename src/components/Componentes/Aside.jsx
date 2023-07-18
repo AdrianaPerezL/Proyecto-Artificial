@@ -99,7 +99,7 @@ export const Aside = () => {
                 !open && "hidden"
               }`}
             >
-              Imagenes
+              Imágenes
             </span>
           </li></Link>
           {/*Reportes */}
