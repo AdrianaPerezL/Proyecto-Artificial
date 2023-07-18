@@ -8,6 +8,10 @@ import axios from "axios";
 import { Navbar } from "../../Componentes/NavBar";
 
 export const Expediente = () => {
+    useEffect(() => {
+      document.title = "Expedientes";
+    }, []);
+
 //Paginación
 const [dataPage, setDataPage] = useState(4);
 const [currentPage, setCurrentPage] = useState(1);
