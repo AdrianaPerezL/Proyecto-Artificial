@@ -7,7 +7,6 @@ export const Inicio = () => {
     <div className="flex">
       <Aside />
       <div className="w-full">
-        <Navbar />
       </div>
       <div className="ml-24 mb-8 mt-8 pt-12">
         <div className="flex">
