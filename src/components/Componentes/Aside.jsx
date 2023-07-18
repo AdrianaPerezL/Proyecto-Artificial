@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BsArrowLeftShort } from "react-icons/bs";
-import { FaSpeakerDeck, FaUserAlt, FaCaretDown, FaHome, FaPaste, FaPrescriptionBottleAlt, FaPiggyBank, FaHospitalUser, FaUserAltSlash, FaUserTie } from "react-icons/fa";
+import { FaHome, FaPaste, FaUserAltSlash, FaUserTie } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/favicon.png"
 import logoComp from "../../assets/img/logo-artificial-blanco.svg"
@@ -24,7 +24,7 @@ export const Aside = () => {
           onClick={() => setOpen(!open)}
         />
         <div className="inline-flex">
-          <img src={logo} width={25}
+          <img src={logo} width={30}
             className={`text-white text-4xl rounded cursor-pointer block float-left mr-2 duration-500 ${
               open && "rotate-[360deg]"
             } ${open && "scale-0"}`}
@@ -53,7 +53,7 @@ export const Aside = () => {
             </span>
           </li></Link>
 
-          {/*Empleado */}
+          {/*Proyectos */}
           <Link to="/empleado"><li
             className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md  mt-3
                 }`}
@@ -66,11 +66,11 @@ export const Aside = () => {
                 !open && "hidden"
               }`}
             >
-              Empleados
+              Proyectos
             </span>
           </li></Link>
 
-          {/*Departamentos */}
+          {/*Imagenes */}
           <Link to="/departamento"><li
             className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md  mt-3
                 }`}
@@ -83,106 +83,9 @@ export const Aside = () => {
                 !open && "hidden"
               }`}
             >
-              Departamentos
+              Imagenes
             </span>
           </li></Link>
-          
-          {/*Prestaciones */}
-          <Link to="/prestaciones"><li
-            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md mt-3
-                }`}
-          >
-            <span className="text-xl block float-left">
-              <FaPrescriptionBottleAlt />
-            </span>
-            <span
-              className={`text-base font-medium flex-1 duration-200 ${
-                !open && "hidden"
-              }`}
-            >
-              Prestaciones
-            </span>
-          </li></Link>
-          
-          {/*Faltas */}
-          <li
-            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md mt-3
-                }`}
-          >
-            <span className="text-xl block float-left">
-              <FaPiggyBank  />
-            </span>
-            <span
-              className={`text-base font-medium flex-1 duration-200 ${
-                !open && "hidden"
-              }`}
-            >
-              Faltas
-            </span>
-            <span>
-              <FaCaretDown
-                 className={`duration-500 ${!open && "hidden"} ${!submenuOpen && "rotate-180"}`}
-                onClick={() => setSubmenuOpen(!submenuOpen)}
-              />
-            </span>
-          </li>
-          <ul className={`${submenuOpen && "hidden"}`}>
-            {/*Incapacidades */}
-            <Link to="/incapacidad">
-              <li
-                className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md mt-2 mx-5
-                }`}
-              >
-                Incapacidades
-              </li>
-            </Link>
-
-            {/*Ausencias*/}
-            <Link to="/ausencia">
-              <li
-                className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md mt-2 mx-5
-                }`}
-              >
-                Ausencias
-              </li>
-            </Link>
-
-          </ul>
-
-          {/*Indemnizaciones */}
-          <Link to="/indemnizaciones"><li
-            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md  mt-3
-                }`}
-          >
-            <span className="text-xl block float-left">
-              <FaHospitalUser />
-            </span>
-            <span
-              className={`text-base font-medium flex-1 duration-200 ${
-                !open && "hidden"
-              }`}
-            >
-              Indemnizaciones
-            </span>
-          </li></Link>
-
-          {/*Usuarios */}
-          <Link to="/usuarios"><li
-            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md  mt-3
-                }`}
-          >
-            <span className="text-xl block float-left">
-              <FaUserAlt />
-            </span>
-            <span
-              className={`text-base font-medium flex-1 duration-200 ${
-                !open && "hidden"
-              }`}
-            >
-              Usuarios
-            </span>
-          </li></Link>
-
           {/*Salir*/}
           <a href="/"><li
             className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md  mt-3
