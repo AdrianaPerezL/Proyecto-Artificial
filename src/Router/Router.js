@@ -10,7 +10,7 @@ export default function Router() {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/inicio" element={<Inicio />} />
-        <Route path="/tabla" element={<Proyecto />} />
+        <Route path="/proyectos" element={<Proyecto />} />
       </Routes>
     </BrowserRouter>
   );

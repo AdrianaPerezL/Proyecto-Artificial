@@ -9,7 +9,7 @@ function Tabla() {
         <Aside />
         <div className="ml-24 mb-8">
           <main className="flex">
-            <section className=" w-full relative overflow-x-auto shadow-md sm:rounded-lg pb-8">
+            <section className=" w-full relative overflow-x-auto sm:rounded-lg pb-8">
               <div className="flex justify-between pt-24">
                 <div></div>
                 <h1 className=" text-center text-3xl text-black">Proyectos</h1>
