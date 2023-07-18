@@ -54,7 +54,7 @@ export const Aside = () => {
           </li></Link>
 
           {/*Proyectos */}
-          <Link to="/empleado"><li
+          <Link to="/proyectos"><li
             className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-2 hover:bg-light-white rounded-md  mt-3
                 }`}
           >
