@@ -148,7 +148,7 @@ console.log("Listar datos", datosServidor);
                       type="text"
                       id="table-search-users"
                       className="block p-2 pl-10 text-sm text-black border border-gray-700 rounded-lg w-80 bg-gray-100 focus:ring-blue-500 focus:border-blue-500  dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="Ingrese nombre o id de expediente"
+                      placeholder="        Ingrese nombre o id de expediente"
                       value={busqueda}
                       onChange={handleChange}
                     />
@@ -176,6 +176,53 @@ console.log("Listar datos", datosServidor);
                       </tr>
                     </thead>
                     <tbody className="text-center">
+                    <tr className="bg-gray-100 border-black  text-black text-center hover:bg-gray-200 hover:text-dark">
+                              <th
+                                scope="row"
+                                className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap "
+                              >
+                                <div className="pl-3 text-start">
+                                  <div className="text-base font-semibold text-black">
+                                    2545242
+                                  </div>
+                                  <div className="font-normal text-gray-500">
+                                    42424
+                                  </div>
+                                </div>
+                              </th>
+                              <td className="px-6 py-4">
+                                24242
+                              </td>
+                              <td className="px-6 py-4">4242</td>
+                              <td className="px-6 py-4">4242</td>
+                              <td className="px-6 py-8 text-center flex justify-evenly content-center">
+                                <Link
+                                  to={`#`}
+                                  className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                >
+                                  <button className="btn btn-ver">
+                                    <span className="text-azul-ver text-2xl">
+                                      <FaRegEye />
+                                    </span>
+                                  </button>
+                                </Link>
+                                <Link
+                                   to={`#`}
+                                  className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                >
+                                  <button className="btn btn-editar ">
+                                    <span className="text-amarillo-editar text-2xl">
+                                      <FaRegEdit />
+                                    </span>
+                                  </button>
+                                </Link>
+                                <button className="btn btn-eliminar " onClick={()=> FuncionEliminar(2)}>
+                                  <span className="text-rojo-eliminar text-xl">
+                                    <FaTrashAlt />
+                                  </span>
+                                </button>
+                              </td>
+                            </tr>
                       {datosServidor &&
                         datosServidor.map(empl => {
                           return (
