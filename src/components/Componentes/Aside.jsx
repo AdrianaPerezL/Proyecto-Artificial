@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BsArrowLeftShort } from "react-icons/bs";
-import { FaHome, FaPaste, FaUserAltSlash, FaUserTie, FaImages, FaFolder } from "react-icons/fa";
+import { FaHome, FaPaste, FaUserAltSlash, FaImages, FaFolder } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/favicon.png"
 import logoComp from "../../assets/img/logo-artificial-blanco.svg"
