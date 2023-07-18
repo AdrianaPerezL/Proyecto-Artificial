@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Aside } from "../Componentes/Aside";
+import { Aside } from "../../Componentes/Aside";
 
-export const Inicio = () => {
+
+export const Expediente = () => {
   return (
     <div className="flex">
       <Aside />
