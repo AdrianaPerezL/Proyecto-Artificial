@@ -1,8 +1,12 @@
 import React from "react";
 import { Aside } from "../../Componentes/Aside";
 import { FaPlusCircle, FaRegEye, FaRegEdit, FaTrashAlt } from "react-icons/fa";
+import { useEffect } from "react";
 
 function Tabla() {
+    useEffect(() => {
+      document.title = "Proyectos";
+    }, []);
   return (
     <>
       <div classname="flex ">
