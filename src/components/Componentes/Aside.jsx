@@ -11,9 +11,9 @@ export const Aside = () => {
   const [submenuOpen, setSubmenuOpen] = useState(true);
 
   return (
-    <nav className="fixed z-20">
+    <nav className="fixed z-20 ">
       <div
-        className={` bg-Azul h-screen p-5 pt-8 ${
+        className={` bg-Azul h-screen p-5 pt-8 rounded-tr-xl rounded-br-xl ${
           open ? "w-60" : "w-20"
         } duration-300 relative`}
       >
@@ -23,7 +23,7 @@ export const Aside = () => {
           }`}
           onClick={() => setOpen(!open)}
         />
-        <div className="inline-flex">
+        <div className="inline-flex ">
           <img src={logo} width={30}
             className={`text-white text-4xl rounded cursor-pointer block float-left mr-2 duration-500 ${
               open && "rotate-[360deg]"
