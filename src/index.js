@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Rutas from './components/rutas/Rutas';
+import Router from './Router/Router';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Rutas/>
+    <Router/>
   </React.StrictMode>
 );
 

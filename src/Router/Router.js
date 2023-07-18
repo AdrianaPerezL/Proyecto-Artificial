@@ -1,13 +1,14 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import App from '../../App';
-import Index from '../vistas/Index';
+import Index from '../components/vistas/Index';
+import { Inicio } from '../components/vistas/Inicio';
  
 export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Index/>}/>
+        <Route path='/inicio' element={<Inicio/>}/>
         </Routes>
     </BrowserRouter>
   );
