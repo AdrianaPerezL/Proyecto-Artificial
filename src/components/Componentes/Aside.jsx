@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BsArrowLeftShort } from "react-icons/bs";
-import { FaHome, FaPaste, FaUserAltSlash, FaImages, FaFolder } from "react-icons/fa";
+import { FaHome, FaPaste, FaUserAltSlash,FaFile, FaImages, FaFolder } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/favicon.png"
 import logoComp from "../../assets/img/logo-artificial-blanco.svg"
@@ -38,14 +38,14 @@ export const Aside = () => {
         <ul className="pt-2">
           {/*Inicio */}
           <Link to="/inicio"><li
-            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md mt-3
+            className={`text-white text-md flex items-center gap-x-4 cursor-pointer p-2 py-2 hover:bg-light-white rounded-md mt-3
                 }`}
           >
             <span className="text-xl block float-left">
               <FaHome />
             </span>
             <span
-              className={`text-base font-medium flex-1 duration-200 ${
+              className={`text-xl font-medium flex-1 duration-200 ${
                 !open && "hidden"
               }`}
             >
@@ -55,31 +55,47 @@ export const Aside = () => {
 
           {/*Proyectos */}
           <Link to="/empleado"><li
-            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md  mt-3
+            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-2 hover:bg-light-white rounded-md  mt-3
                 }`}
           >
             <span className="text-xl block float-left">
               < FaFolder />
             </span>
             <span
-              className={`text-base font-medium flex-1 duration-200 ${
+              className={`text-xl font-medium flex-1 duration-200 ${
                 !open && "hidden"
               }`}
             >
               Proyectos
             </span>
           </li></Link>
+          {/*Expedientes */}
+          <Link to="/empleado"><li
+            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-2 hover:bg-light-white rounded-md  mt-3
+                }`}
+          >
+            <span className="text-xl block float-left">
+              < FaFile />
+            </span>
+            <span
+              className={`text-xl font-medium flex-1 duration-200 ${
+                !open && "hidden"
+              }`}
+            >
+              Expedientes
+            </span>
+          </li></Link>
 
           {/*Imagenes */}
           <Link to="#"><li
-            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md  mt-3
+            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-2 hover:bg-light-white rounded-md  mt-3
                 }`}
           >
             <span className="text-xl block float-left">
               <FaImages />
             </span>
             <span
-              className={`text-base font-medium flex-1 duration-200 ${
+              className={`text-xl font-medium flex-1 duration-200 ${
                 !open && "hidden"
               }`}
             >
@@ -88,14 +104,14 @@ export const Aside = () => {
           </li></Link>
           {/*Reportes */}
           <Link to="#"><li
-            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md  mt-3
+            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-2 hover:bg-light-white rounded-md  mt-3
                 }`}
           >
             <span className="text-xl block float-left">
               <FaPaste />
             </span>
             <span
-              className={`text-base font-medium flex-1 duration-200 ${
+              className={`text-xl font-medium flex-1 duration-200 ${
                 !open && "hidden"
               }`}
             >
@@ -104,14 +120,14 @@ export const Aside = () => {
           </li></Link>
           {/*Salir*/}
           <a href="/" className="absolute  bottom-0 pb-5"><li
-            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-1 hover:bg-light-white rounded-md  mt-3
+            className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-2 hover:bg-light-white rounded-md  mt-3
                 }`}
           >
             <span className="text-xl block float-left">
               <FaUserAltSlash />
             </span>
             <span
-              className={`text-base font-medium flex-1 duration-200 ${
+              className={`text-xl font-medium flex-1 duration-200 ${
                 !open && "hidden"
               }`}
             >
