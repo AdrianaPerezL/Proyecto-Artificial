@@ -1,12 +1,15 @@
 import React from "react";
 import { Aside } from "../../Componentes/Aside";
 import { FaPlusCircle, FaRegEye, FaRegEdit, FaTrashAlt } from "react-icons/fa";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Tabla() {
-    useEffect(() => {
-      document.title = "Proyectos";
-    }, []);
+  useEffect(() => {
+    document.title = "Proyectos";
+  }, []);
+
+  const [showModal, setShowModal] = React.useState(false);
+
   return (
     <>
       <div classname="flex ">
@@ -19,11 +22,12 @@ function Tabla() {
                 <h1 className=" text-center text-3xl text-black">Proyectos</h1>
                 <div className="">
                   <div className="flex items-center md:justify-end px-5 m-2">
-                    <a
-                      href="/agregar-empleado"
-                      className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                    >
-                      <button className="btn btn-agregar rounded-full">
+                    <a className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                      <button
+                        className="btn btn-agregar rounded-full"
+                        type="button"
+                        onClick={() => setShowModal(true)}
+                      >
                         <span className="text-col4 text-4xl">
                           <FaPlusCircle />
                         </span>
@@ -32,6 +36,63 @@ function Tabla() {
                   </div>
                 </div>
               </div>
+
+              {/* Empieza el modal */}
+              {showModal ? (
+                <>
+                  <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                    <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                      {/*content*/}
+                      <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                        {/*header*/}
+                        <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                          <h3 className="text-3xl font-semibold">
+                            Modal Title
+                          </h3>
+                          <button
+                            className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                            onClick={() => setShowModal(false)}
+                          >
+                            <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                              ×
+                            </span>
+                          </button>
+                        </div>
+                        {/*body*/}
+                        <div className="relative p-6 flex-auto">
+                          <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                            I always felt like I could do anything. That’s the
+                            main thing people are controlled by! Thoughts- their
+                            perception of themselves! They're slowed down by
+                            their perception of themselves. If you're taught you
+                            can’t do anything, you won’t do anything. I was
+                            taught I could do everything.
+                          </p>
+                        </div>
+                        {/*footer*/}
+                        <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                          <button
+                            className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                            type="button"
+                            onClick={() => setShowModal(false)}
+                          >
+                            Close
+                          </button>
+                          <button
+                            className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                            type="button"
+                            onClick={() => setShowModal(false)}
+                          >
+                            Save Changes
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                </>
+              ) : null}
+              {/*Termina el modal*/}
               <div className="mx-5">
                 <div className="flex items-center md:justify-end pb-3 m-2">
                   <label htmlFor="table-search" className="sr-only">
@@ -83,52 +144,42 @@ function Tabla() {
                       </tr>
                     </thead>
                     <tbody className="text-center">
-                              <tr className=" border-black  text-black text-center hover:bg-gray-200 hover:text-dark">
-                                <th
-                                  scope="row"
-                                  className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap "
-                                >
-                                  <div className="pl-3 text-start">
-                                    <div className="text-base font-semibold text-black">
-                                    </div>
-                                    <div className="font-normal text-gray-500">
-                                    </div>
-                                  </div>
-                                </th>
-                                <td className="px-6 py-4">
-                                </td>
-                                <td className="px-6 py-4">
-                                </td>
-                                <td className="px-6 py-4"></td>
-                                <td className="px-6 py-8 text-center flex justify-evenly content-center">
+                      <tr className=" border-black  text-black text-center hover:bg-gray-200 hover:text-dark">
+                        <th
+                          scope="row"
+                          className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap "
+                        >
+                          <div className="pl-3 text-start">
+                            <div className="text-base font-semibold text-black"></div>
+                            <div className="font-normal text-gray-500"></div>
+                          </div>
+                        </th>
+                        <td className="px-6 py-4"></td>
+                        <td className="px-6 py-4"></td>
+                        <td className="px-6 py-4"></td>
+                        <td className="px-6 py-8 text-center flex justify-evenly content-center">
+                          <button className="btn btn-ver">
+                            <span className="text-azul-ver text-2xl">
+                              <FaRegEye />
+                            </span>
+                          </button>
 
-                                    <button className="btn btn-ver">
-                                      <span className="text-azul-ver text-2xl">
-                                        <FaRegEye />
-                                      </span>
-                                    </button>
-
-                                    <button className="btn btn-editar ">
-                                      <span className="text-amarillo-editar text-2xl">
-                                        <FaRegEdit />
-                                      </span>
-                                    </button>
-                                  <button
-                                    className="btn btn-eliminar "
-                                  >
-                                    <span className="text-rojo-eliminar text-xl">
-                                      <FaTrashAlt />
-                                    </span>
-                                  </button>
-                                </td>
-                              </tr>
-                            ;
-                          
-                          
+                          <button className="btn btn-editar ">
+                            <span className="text-amarillo-editar text-2xl">
+                              <FaRegEdit />
+                            </span>
+                          </button>
+                          <button className="btn btn-eliminar ">
+                            <span className="text-rojo-eliminar text-xl">
+                              <FaTrashAlt />
+                            </span>
+                          </button>
+                        </td>
+                      </tr>
+                      ;
                     </tbody>
                   </table>
                 </div>
-                
               </div>
             </section>
           </main>
