@@ -87,7 +87,7 @@ export const Aside = () => {
           </li></Link>
 
           {/*Imagenes */}
-          <Link to="#"><li
+          <Link to="/imagenes"><li
             className={`text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 py-2 hover:bg-light-white rounded-md  mt-3
                 }`}
           >
