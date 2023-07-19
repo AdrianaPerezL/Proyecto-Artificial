@@ -6,6 +6,7 @@ import { Paginacion } from "../../Componentes/Paginacion";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { Navbar } from "../../Componentes/NavBar";
+import '../../../assets/styles/expediente.css'
 
 export const Expediente = () => {
     useEffect(() => {
@@ -111,7 +112,7 @@ console.log("Listar datos", datosServidor);
             <section className=" w-full relative overflow-x-auto shadow-md sm:rounded-lg pb-8">
               <div className="flex justify-between pt-24">
                 <div></div>
-                <h1 className=" text-center text-3xl text-black">EXPEDIENTES</h1>
+                <h1 className="title text-center text-3xl text-black">EXPEDIENTES</h1>
                 <div className="">
                   <div className="flex items-center md:justify-end px-5 m-2">
                     <a
@@ -135,7 +136,7 @@ console.log("Listar datos", datosServidor);
                   <div className="relative md:content-center">
                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                       <svg
-                        className="w-5 h-5 text-black dark:text-black"
+                        className="icon1 w-5 h-5 text-black dark:text-black"
                         aria-hidden="true"
                         fill="currentColor"
                         viewBox="0 0 20 20"
