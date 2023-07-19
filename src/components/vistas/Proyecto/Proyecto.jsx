@@ -46,11 +46,9 @@ function Tabla() {
                       <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                         {/*header*/}
                         <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                          <h3 className="text-3xl font-semibold">
-                            Modal Title
-                          </h3>
+                          <h3 className="title">Agregar Proyecto</h3>
                           <button
-                            className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                            className="p-1 ml-auto bg-transparent border-0 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                             onClick={() => setShowModal(false)}
                           >
                             <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
@@ -60,14 +58,95 @@ function Tabla() {
                         </div>
                         {/*body*/}
                         <div className="relative p-6 flex-auto">
-                          <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                            I always felt like I could do anything. That’s the
-                            main thing people are controlled by! Thoughts- their
-                            perception of themselves! They're slowed down by
-                            their perception of themselves. If you're taught you
-                            can’t do anything, you won’t do anything. I was
-                            taught I could do everything.
-                          </p>
+                          <div>
+                            <div className="-mx-3 flex flex-wrap">
+                              <div className="w-full px-3 sm:w-1/2">
+                                <div className="mb-5">
+                                  <label
+                                    htmlFor="nproyecto"
+                                    className="mb-3 block text-base font-medium text-[#263562]"
+                                  >
+                                    Nombre proyecto
+                                  </label>
+                                  <input
+                                    type="text"
+                                    name="nproyecto"
+                                    id="nproyecto"
+                                    placeholder="Nombre proyecto"
+                                    className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
+                                  />
+                                </div>
+                              </div>
+                              <div className="w-full px-3 sm:w-1/2">
+                                <div className="mb-5">
+                                  <label
+                                    htmlFor="pdefoto"
+                                    className="mb-3 block text-base font-medium text-[#263562]"
+                                  >
+                                    Expediente
+                                  </label>
+                                  <input
+                                    type="text"
+                                    name="Exp"
+                                    id="Exp"
+                                    placeholder="Expediente"
+                                    className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div className="-mx-3 flex flex-wrap">
+                              <div className="w-full px-3 sm:w-1/2">
+                                <div className="mb-5">
+                                  <label
+                                    htmlFor="date"
+                                    className="mb-3 block text-base font-medium text-[#263562]"
+                                  >
+                                    Titulo de foto
+                                  </label>
+                                  <input
+                                    type="text"
+                                    name="tfoto"
+                                    id="tfoto"
+                                    placeholder="Titulo de foto"
+                                    className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
+                                  />
+                                </div>
+                              </div>
+                              <div className="w-full px-3 sm:w-1/2">
+                                <div className="mb-5">
+                                  <label
+                                    htmlFor="pdefoto"
+                                    className="mb-3 block text-base font-medium text-[#263562]"
+                                  >
+                                    Pie de foto
+                                  </label>
+                                  <input
+                                    type="text"
+                                    name="pief"
+                                    id="pief"
+                                    placeholder="Pie de foto"
+                                    className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div className="mb-5">
+                              <label
+                                htmlFor="guest"
+                                className="mb-3 block text-base font-medium text-[#263562]"
+                              >
+                                Descripción
+                              </label>
+                              <input
+                                type="text"
+                                name="descripción"
+                                id="descripción"
+                                placeholder="Descripción"
+                                className="w-full appearance-none rounded-xl border border-[#E2231A] bg-white py-8 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
+                              />
+                            </div>
+                          </div>
                         </div>
                         {/*footer*/}
                         <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
@@ -127,16 +206,19 @@ function Tabla() {
                     <thead className="text-xs text-black uppercase text-center bg-col2">
                       <tr>
                         <th scope="col" className="px-6 py-3">
-                          Nombre
+                          Nombre de proyecto
                         </th>
                         <th scope="col" className="px-6 py-3">
-                          DUI
+                          Expediente
                         </th>
                         <th scope="col" className="px-6 py-3">
-                          Departamento
+                          Título de foto
                         </th>
                         <th scope="col" className="px-6 py-3">
-                          Cargo
+                          Pie de foto
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Descripción
                         </th>
                         <th scope="col" className="px-6 py-3">
                           Acciones
@@ -156,6 +238,8 @@ function Tabla() {
                         </th>
                         <td className="px-6 py-4"></td>
                         <td className="px-6 py-4"></td>
+                        <td className="px-6 py-4"></td>
+
                         <td className="px-6 py-4"></td>
                         <td className="px-6 py-8 text-center flex justify-evenly content-center">
                           <button className="btn btn-ver">
