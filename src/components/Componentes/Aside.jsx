@@ -82,7 +82,7 @@ export const Aside = () => {
                 !open && "hidden"
               }`}
             >
-              Expedientes
+              Colecciones
             </span>
           </li></Link>
 

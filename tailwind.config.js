@@ -16,6 +16,9 @@ module.exports = {
       'Negro':   '#383636',
       'Celeste': '#D9DDE8',
       'Gris':    '#F4EFEF',
+      "azul-ver": "#035AA6",
+      "amarillo-editar": "#BF7E04",
+      "rojo-eliminar": "#A61F1F",
     }
   },
   plugins: [],

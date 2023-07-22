@@ -3,7 +3,7 @@ import { Aside } from "../../Componentes/Aside";
 import { FaPlusCircle, FaRegEye, FaRegEdit, FaTrashAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
-function Tabla() {
+export const Tabla= () => {
   useEffect(() => {
     document.title = "Proyectos";
   }, []);
@@ -21,7 +21,7 @@ function Tabla() {
             <section className=" w-full relative overflow-x-auto sm:rounded-lg pb-8">
               <div className="flex justify-between pt-24">
                 <div></div>
-                <h1 className=" text-center text-3xl text-black">Proyectos</h1>
+                <h1 className=" text-center text-3xl text-black">PROYECTOS</h1>
                 <div className="">
                   <div className="flex items-center md:justify-end px-5 m-2">
                     <a className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
@@ -30,7 +30,7 @@ function Tabla() {
                         type="button"
                         onClick={() => setShowModal(true)}
                       >
-                        <span className="text-col4 text-4xl">
+                        <span className="text-col4 text-green-600 text-4xl">
                           <FaPlusCircle />
                         </span>
                       </button>
@@ -47,8 +47,8 @@ function Tabla() {
                       {/*content*/}
                       <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                         {/*header*/}
-                        <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                          <h3 className="title">Agregar Proyecto</h3>
+                        <div className=" text-black flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                          <h3 className="title text-black">Agregar Proyecto</h3>
                           <button
                             className="p-1 ml-auto bg-transparent border-0 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                             onClick={() => setShowModal(false)}
@@ -63,6 +63,7 @@ function Tabla() {
                           <div>
                             <div className="-mx-3 flex flex-wrap">
                               <div className="w-full px-3 sm:w-1/2">
+                                {/*Nombre proyecto */}
                                 <div className="mb-5">
                                   <label
                                     htmlFor="nproyecto"
@@ -72,31 +73,33 @@ function Tabla() {
                                   </label>
                                   <input
                                     type="text"
-                                    name="nproyecto"
-                                    id="nproyecto"
+                                    name="nombre_proyecto"
+                                    id="nombre_proyecto"
                                     placeholder="Nombre proyecto"
                                     className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
                                   />
                                 </div>
                               </div>
+                              {/*N° expediente */}
                               <div className="w-full px-3 sm:w-1/2">
                                 <div className="mb-5">
                                   <label
-                                    htmlFor="pdefoto"
+                                    htmlFor="expediente"
                                     className="mb-3 block text-base font-medium text-[#263562]"
                                   >
-                                    Expediente
+                                    N° Expediente
                                   </label>
                                   <input
                                     type="text"
-                                    name="Exp"
-                                    id="Exp"
-                                    placeholder="Expediente"
+                                    name="expediente"
+                                    id="expediente"
+                                    placeholder="N° Expediente"
                                     className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
                                   />
                                 </div>
                               </div>
                             </div>
+                            {/*Descripción */}
                             <div className="-mx-3 flex flex-wrap">
                               <div className="w-full px-3 sm:w-1/2">
                                 <div className="mb-5">
@@ -104,49 +107,17 @@ function Tabla() {
                                     htmlFor="date"
                                     className="mb-3 block text-base font-medium text-[#263562]"
                                   >
-                                    Titulo de foto
+                                    Descripción
                                   </label>
                                   <input
                                     type="text"
-                                    name="tfoto"
-                                    id="tfoto"
-                                    placeholder="Titulo de foto"
+                                    name="descripcion"
+                                    id="descripcion"
+                                    placeholder="Descripción"
                                     className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
                                   />
                                 </div>
                               </div>
-                              <div className="w-full px-3 sm:w-1/2">
-                                <div className="mb-5">
-                                  <label
-                                    htmlFor="pdefoto"
-                                    className="mb-3 block text-base font-medium text-[#263562]"
-                                  >
-                                    Pie de foto
-                                  </label>
-                                  <input
-                                    type="text"
-                                    name="pief"
-                                    id="pief"
-                                    placeholder="Pie de foto"
-                                    className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="mb-5">
-                              <label
-                                htmlFor="guest"
-                                className="mb-3 block text-base font-medium text-[#263562]"
-                              >
-                                Descripción
-                              </label>
-                              <input
-                                type="text"
-                                name="descripción"
-                                id="descripción"
-                                placeholder="Descripción"
-                                className="w-full appearance-none rounded-xl border border-[#E2231A] bg-white py-8 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
-                              />
                             </div>
                           </div>
                         </div>
@@ -157,14 +128,14 @@ function Tabla() {
                             type="button"
                             onClick={() => setShowModal(false)}
                           >
-                            Close
+                            Cancelar
                           </button>
                           <button
-                            className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                            className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                             type="button"
                             onClick={() => setShowModal(false)}
                           >
-                            Save Changes
+                            Registrar
                           </button>
                         </div>
                       </div>
@@ -214,12 +185,6 @@ function Tabla() {
                           Expediente
                         </th>
                         <th scope="col" className="px-6 py-3">
-                          Título de foto
-                        </th>
-                        <th scope="col" className="px-6 py-3">
-                          Pie de foto
-                        </th>
-                        <th scope="col" className="px-6 py-3">
                           Descripción
                         </th>
                         <th scope="col" className="px-6 py-3">
@@ -245,7 +210,7 @@ function Tabla() {
                         <td className="px-6 py-4"></td>
                         <td className="px-6 py-8 text-center flex justify-evenly content-center">
                           <button className="btn btn-ver">
-                            <span className="text-azul-ver text-2xl">
+                            <span className="text-blue-500 text-2xl">
                               <FaRegEye />
                             </span>
                           </button>
@@ -254,7 +219,7 @@ function Tabla() {
                             className="btn btn-editar "
                             onClick={() => setShowModal1(true)}
                           >
-                            <span className="text-amarillo-editar text-2xl">
+                            <span className="text-yellow-500 text-2xl">
                               <FaRegEdit />
                             </span>
                           </button>
@@ -267,9 +232,7 @@ function Tabla() {
                                   <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                                     {/*header*/}
                                     <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                                      <h3 className="title">
-                                        Editar Proyecto
-                                      </h3>
+                                      <h3 className="title">Editar Proyecto</h3>
                                       <button
                                         className="p-1 ml-auto bg-transparent border-0 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                                         onClick={() => setShowModal1(false)}
@@ -284,6 +247,7 @@ function Tabla() {
                                       <div>
                                         <div className="-mx-3 flex flex-wrap">
                                           <div className="w-full px-3 sm:w-1/2">
+                                            {/*Nombre proyecto */}
                                             <div className="mb-5">
                                               <label
                                                 htmlFor="nproyecto"
@@ -293,31 +257,33 @@ function Tabla() {
                                               </label>
                                               <input
                                                 type="text"
-                                                name="nproyecto"
-                                                id="nproyecto"
+                                                name="nombre_proyecto"
+                                                id="nombre_proyecto"
                                                 placeholder="Nombre proyecto"
                                                 className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
                                               />
                                             </div>
                                           </div>
+                                          {/*N° expediente */}
                                           <div className="w-full px-3 sm:w-1/2">
                                             <div className="mb-5">
                                               <label
-                                                htmlFor="pdefoto"
+                                                htmlFor="expediente"
                                                 className="mb-3 block text-base font-medium text-[#263562]"
                                               >
-                                                Expediente
+                                                N° Expediente
                                               </label>
                                               <input
                                                 type="text"
-                                                name="Exp"
-                                                id="Exp"
-                                                placeholder="Expediente"
+                                                name="expediente"
+                                                id="expediente"
+                                                placeholder="N° Expediente"
                                                 className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
                                               />
                                             </div>
                                           </div>
                                         </div>
+                                        {/*Descripción */}
                                         <div className="-mx-3 flex flex-wrap">
                                           <div className="w-full px-3 sm:w-1/2">
                                             <div className="mb-5">
@@ -325,49 +291,17 @@ function Tabla() {
                                                 htmlFor="date"
                                                 className="mb-3 block text-base font-medium text-[#263562]"
                                               >
-                                                Titulo de foto
+                                                Descripción
                                               </label>
                                               <input
                                                 type="text"
-                                                name="tfoto"
-                                                id="tfoto"
-                                                placeholder="Titulo de foto"
+                                                name="descripcion"
+                                                id="descripcion"
+                                                placeholder="Descripción"
                                                 className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
                                               />
                                             </div>
                                           </div>
-                                          <div className="w-full px-3 sm:w-1/2">
-                                            <div className="mb-5">
-                                              <label
-                                                htmlFor="pdefoto"
-                                                className="mb-3 block text-base font-medium text-[#263562]"
-                                              >
-                                                Pie de foto
-                                              </label>
-                                              <input
-                                                type="text"
-                                                name="pief"
-                                                id="pief"
-                                                placeholder="Pie de foto"
-                                                className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
-                                              />
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div className="mb-5">
-                                          <label
-                                            htmlFor="guest"
-                                            className="mb-3 block text-base font-medium text-[#263562]"
-                                          >
-                                            Descripción
-                                          </label>
-                                          <input
-                                            type="text"
-                                            name="descripción"
-                                            id="descripción"
-                                            placeholder="Descripción"
-                                            className="w-full appearance-none rounded-xl border border-[#E2231A] bg-white py-8 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
-                                          />
                                         </div>
                                       </div>
                                     </div>
@@ -396,7 +330,7 @@ function Tabla() {
                           ) : null}
                           {/*Termina el modal*/}
                           <button className="btn btn-eliminar ">
-                            <span className="text-rojo-eliminar text-xl">
+                            <span className="text-red-500 text-xl">
                               <FaTrashAlt />
                             </span>
                           </button>
@@ -414,5 +348,3 @@ function Tabla() {
     </>
   );
 }
-
-export default Tabla;

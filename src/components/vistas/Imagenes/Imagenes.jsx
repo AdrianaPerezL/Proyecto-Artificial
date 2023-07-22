@@ -119,7 +119,7 @@ console.log("Listar datos", datosServidor);
                       className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                     >
                       <button className="btn btn-agregar rounded-full">
-                        <span className="text-col4 text-4xl">
+                        <span className="text-col4 text-green-600 text-4xl">
                           <FaPlusCircle />
                         </span>
                       </button>
@@ -215,13 +215,13 @@ console.log("Listar datos", datosServidor);
                                   className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                 >
                                   <button className="btn btn-editar ">
-                                    <span className="text-amarillo-editar text-2xl">
+                                    <span className="text-yellow-500 text-2xl">
                                       <FaRegEdit />
                                     </span>
                                   </button>
                                 </Link>
                                 <button className="btn btn-eliminar " onClick={()=> FuncionEliminar(2)}>
-                                  <span className="text-rojo-eliminar text-xl">
+                                  <span className="text-red-500 text-xl">
                                     <FaTrashAlt />
                                   </span>
                                 </button>
