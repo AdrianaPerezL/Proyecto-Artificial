@@ -10,7 +10,7 @@ import "../../../assets/styles/expediente.css";
 
 export const Expediente = () => {
   useEffect(() => {
-    document.title = "Expedientes";
+    document.title = "Colecciones";
   }, []);
   /* Modals */
   const [showModal, setShowModal] = React.useState(false);
@@ -84,7 +84,7 @@ export const Expediente = () => {
       getInfo();
     } catch (err) {
       console.error(err);
-      Swal.fire("Error", "Ocurrió un error al eliminar empleado", "error");
+      Swal.fire("Error", "Ocurrió un error al eliminar colección", "error");
     }
   };
   const FuncionEliminar = id => {
@@ -99,7 +99,7 @@ export const Expediente = () => {
     }).then(result => {
       if (result.isConfirmed) {
         eliminarEmpleado(id);
-        Swal.fire("Eliminado", "El expediente ha sido removido", "success");
+        Swal.fire("Eliminado", "La colección ha sido removida", "success");
       }
     });
   };
@@ -141,7 +141,7 @@ export const Expediente = () => {
                     <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                       {/*header*/}
                       <div className=" text-black flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                        <h3 className="title text-black">Agregar Proyecto</h3>
+                        <h3 className="title text-black">Agregar Colección</h3>
                         <button
                           className="p-1 ml-auto bg-transparent border-0 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                           onClick={() => setShowModal(false)}
@@ -159,56 +159,35 @@ export const Expediente = () => {
                               {/*Nombre proyecto */}
                               <div className="mb-5">
                                 <label
-                                  htmlFor="nproyecto"
+                                  htmlFor="nombre_coleccion"
                                   className="mb-3 block text-base font-medium text-[#263562]"
                                 >
-                                  Nombre proyecto
+                                  Nombre de colección
                                 </label>
                                 <input
                                   type="text"
-                                  name="nombre_proyecto"
-                                  id="nombre_proyecto"
-                                  placeholder="Nombre proyecto"
-                                  className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
+                                  name="nombre_coleccion"
+                                  id="nombre_coleccion"
+                                  placeholder="Nombre coleccion"
+                                  className="w-full rounded-xl border  bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
                                 />
                               </div>
                             </div>
-                            {/*N° expediente */}
+                            {/*Proyecto */}
                             <div className="w-full px-3 sm:w-1/2">
                               <div className="mb-5">
                                 <label
-                                  htmlFor="expediente"
-                                  className="mb-3 block text-base font-medium text-[#263562]"
+                                  for="proyecto"
+                                  class="block mb-2 text-sm font-medium text-gray-900 "
                                 >
-                                  N° Expediente
+                                  Proyecto
                                 </label>
-                                <input
-                                  type="text"
-                                  name="expediente"
-                                  id="expediente"
-                                  placeholder="N° Expediente"
-                                  className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          {/*Descripción */}
-                          <div className="-mx-3 flex flex-wrap">
-                            <div className="w-full px-3 sm:w-1/2">
-                              <div className="mb-5">
-                                <label
-                                  htmlFor="date"
-                                  className="mb-3 block text-base font-medium text-[#263562]"
+                                <select
+                                  id="proyecto"
+                                  class="bg-gray-50 border border-gray-300 text-gray-900  text-sm rounded-lg focus:ring-col2 focus:border-col2 block w-full p-2.5 "
                                 >
-                                  Descripción
-                                </label>
-                                <input
-                                  type="text"
-                                  name="descripcion"
-                                  id="descripcion"
-                                  placeholder="Descripción"
-                                  className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
-                                />
+                                  <option></option>
+                                </select>
                               </div>
                             </div>
                           </div>
@@ -264,7 +243,7 @@ export const Expediente = () => {
                     type="text"
                     id="table-search-users"
                     className="block p-2 pl-10 text-sm text-black border border-gray-700 rounded-lg w-80 bg-gray-100 focus:ring-blue-500 focus:border-blue-500  dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="        Ingrese nombre o id de expediente"
+                    placeholder="        Ingrese nombre de colección o proyecto"
                     value={busqueda}
                     onChange={handleChange}
                   />
@@ -278,13 +257,7 @@ export const Expediente = () => {
                         Nombre
                       </th>
                       <th scope="col" className="px-6 py-3">
-                        DUI
-                      </th>
-                      <th scope="col" className="px-6 py-3">
-                        Departamento
-                      </th>
-                      <th scope="col" className="px-6 py-3">
-                        Cargo
+                        Colección
                       </th>
                       <th scope="col" className="px-6 py-3">
                         Acciones
@@ -301,22 +274,21 @@ export const Expediente = () => {
                           <div className="text-base font-semibold text-black">
                             2545242
                           </div>
-                          <div className="font-normal text-gray-500">42424</div>
                         </div>
                       </th>
-                      <td className="px-6 py-4">24242</td>
-                      <td className="px-6 py-4">4242</td>
                       <td className="px-6 py-4">4242</td>
                       <td className="px-6 py-8 text-center flex justify-evenly content-center">
                         <Link to={`#`} className="font-medium  hover:underline">
-                          <button className="btn btn-ver"
-                          onClick={() => setShowModalver(true)}>
+                          <button
+                            className="btn btn-ver"
+                            onClick={() => setShowModalver(true)}
+                          >
                             <span className=" text-blue-500 text-2xl">
                               <FaRegEye />
                             </span>
                           </button>
-                            {/* Empieza el modal */}
-                            {showModalver ? (
+                          {/* Empieza el modal */}
+                          {showModalver ? (
                             <>
                               <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                                 <div className="relative w-auto my-6 mx-auto max-w-3xl">
@@ -324,7 +296,9 @@ export const Expediente = () => {
                                   <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                                     {/*header*/}
                                     <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                                      <h3 className="title">Editar Proyecto</h3>
+                                      <h3 className="title">
+                                        Información de la colección
+                                      </h3>
                                       <button
                                         className="p-1 ml-auto bg-transparent border-0 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                                         onClick={() => setShowModalver(false)}
@@ -342,55 +316,35 @@ export const Expediente = () => {
                                             {/*Nombre proyecto */}
                                             <div className="mb-5">
                                               <label
-                                                htmlFor="nproyecto"
+                                                htmlFor="nombre_coleccion"
                                                 className="mb-3 block text-base font-medium text-[#263562]"
                                               >
-                                                Nombre proyecto
+                                                Nombre colección
                                               </label>
                                               <input
                                                 type="text"
-                                                name="nombre_proyecto"
-                                                id="nombre_proyecto"
-                                                placeholder="Nombre proyecto"
-                                                className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
+                                                name="nombre_coleccion"
+                                                id="nombre_coleccion"
+                                                disabled
+                                                className="w-full rounded-xl border border-white bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
                                               />
                                             </div>
                                           </div>
-                                          {/*N° expediente */}
+                                          {/*Proyecto*/}
                                           <div className="w-full px-3 sm:w-1/2">
                                             <div className="mb-5">
                                               <label
-                                                htmlFor="expediente"
+                                                htmlFor="id_proyecto"
                                                 className="mb-3 block text-base font-medium text-[#263562]"
                                               >
-                                                N° Expediente
+                                                Proyecto
                                               </label>
                                               <input
                                                 type="text"
-                                                name="expediente"
-                                                id="expediente"
-                                                placeholder="N° Expediente"
-                                                className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
-                                              />
-                                            </div>
-                                          </div>
-                                        </div>
-                                        {/*Descripción */}
-                                        <div className="-mx-3 flex flex-wrap">
-                                          <div className="w-full px-3 sm:w-1/2">
-                                            <div className="mb-5">
-                                              <label
-                                                htmlFor="date"
-                                                className="mb-3 block text-base font-medium text-[#263562]"
-                                              >
-                                                Descripción
-                                              </label>
-                                              <input
-                                                type="text"
-                                                name="descripcion"
-                                                id="descripcion"
-                                                placeholder="Descripción"
-                                                className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
+                                                name="id_proyecto"
+                                                id="id_proyecto"
+                                                disabled
+                                                className="w-full rounded-xl border border-white bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
                                               />
                                             </div>
                                           </div>
@@ -404,14 +358,7 @@ export const Expediente = () => {
                                         type="button"
                                         onClick={() => setShowModalver(false)}
                                       >
-                                        Cancelar
-                                      </button>
-                                      <button
-                                        className="bg-emerald-500 text-black active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                        type="button"
-                                        onClick={() => setShowModalver(false)}
-                                      >
-                                        Actualizar
+                                        Aceptar
                                       </button>
                                     </div>
                                   </div>
@@ -458,56 +405,35 @@ export const Expediente = () => {
                                             {/*Nombre proyecto */}
                                             <div className="mb-5">
                                               <label
-                                                htmlFor="nproyecto"
+                                                htmlFor="nombre_coleccion"
                                                 className="mb-3 block text-base font-medium text-[#263562]"
                                               >
-                                                Nombre proyecto
+                                                Nombre de colección
                                               </label>
                                               <input
                                                 type="text"
-                                                name="nombre_proyecto"
-                                                id="nombre_proyecto"
-                                                placeholder="Nombre proyecto"
+                                                name="nombre_coleccion"
+                                                id="nombre_coleccion"
+                                                placeholder="Nombre coleccion"
                                                 className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
                                               />
                                             </div>
                                           </div>
-                                          {/*N° expediente */}
+                                          {/*Proyecto */}
                                           <div className="w-full px-3 sm:w-1/2">
                                             <div className="mb-5">
                                               <label
-                                                htmlFor="expediente"
-                                                className="mb-3 block text-base font-medium text-[#263562]"
+                                                for="proyecto"
+                                                class="block mb-2 text-sm font-medium text-gray-900 "
                                               >
-                                                N° Expediente
+                                                Proyecto
                                               </label>
-                                              <input
-                                                type="text"
-                                                name="expediente"
-                                                id="expediente"
-                                                placeholder="N° Expediente"
-                                                className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
-                                              />
-                                            </div>
-                                          </div>
-                                        </div>
-                                        {/*Descripción */}
-                                        <div className="-mx-3 flex flex-wrap">
-                                          <div className="w-full px-3 sm:w-1/2">
-                                            <div className="mb-5">
-                                              <label
-                                                htmlFor="date"
-                                                className="mb-3 block text-base font-medium text-[#263562]"
+                                              <select
+                                                id="proyecto"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900  text-sm rounded-lg focus:ring-col2 focus:border-col2 block w-full p-2.5 "
                                               >
-                                                Descripción
-                                              </label>
-                                              <input
-                                                type="text"
-                                                name="descripcion"
-                                                id="descripcion"
-                                                placeholder="Descripción"
-                                                className="w-full rounded-xl border border-[#E2231A] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
-                                              />
+                                                <option></option>
+                                              </select>
                                             </div>
                                           </div>
                                         </div>
