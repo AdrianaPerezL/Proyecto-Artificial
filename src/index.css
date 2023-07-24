@@ -3,8 +3,9 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300&display=swap');
 @font-face {
-    src: local('Century Gothic'), url(../src/fonts/Century.tff) format('truetype');
-    src: local('Arial Black'), url(../src/fonts/Arial.ttf) format('truetype');
+    src: local('Century Gothic'), url(../src/fonts/Century\ Gothic.ttf) format('truetype');
+    src: local('Arial Black'), url(../src/fonts/ariblk.ttf) format('truetype');
+    src: local('Gothic Bold'), url(../src/fonts/GOTHICB0.TTF) format('truetype');
 }
 
 .text-Font2{
