@@ -261,10 +261,10 @@ export const Tabla= () => {
                 <table className="w-full text-sm text-left text-black  dark:text-gray-400 ">
                   <thead className="text-xs text-black uppercase text-center bg-col2">
                     <tr>
-                      <th scope="col" className="px-6 py-3 text-Font2">
+                      <th scope="col" className="px-6 py-3 text-Font1">
                         Nombre
                       </th>
-                      <th scope="col" className="px-6 py-3 text-Font2">
+                      <th scope="col" className="px-6 py-3 text-Font1">
                         Expediente
                       </th>
                       <th scope="col" className="px-6 py-3 text-Font2">
