@@ -263,7 +263,7 @@ export const Tabla= () => {
                   <input
                     type="text"
                     id="table-search-users"
-                    className="block p-2 pl-10 text-sm text-black border border-gray-700 rounded-lg w-80 bg-gray-100 focus:ring-blue-500 focus:border-blue-500  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="mt-5 rounded-[10px] border p-3 w-80 focus:outline-none border-[#E2231A]"
                     placeholder="        Ingrese nombre o id de expediente"
                     value={busqueda}
                     onChange={handleChange}
@@ -274,16 +274,16 @@ export const Tabla= () => {
                 <table className="w-full text-sm text-left text-black  dark:text-gray-400 ">
                   <thead className="text-xs text-black uppercase text-center bg-col2">
                     <tr>
-                      <th scope="col" className="px-6 py-3">
+                      <th scope="col" className="px-6 py-3 text-Font2">
                         Nombre
                       </th>
-                      <th scope="col" className="px-6 py-3">
+                      <th scope="col" className="px-6 py-3 text-Font2">
                         Expediente
                       </th>
-                      <th scope="col" className="px-6 py-3">
+                      <th scope="col" className="px-6 py-3 text-Font2">
                         Descripción
                       </th>
-                      <th scope="col" className="px-6 py-3">
+                      <th scope="col" className="px-6 py-3 text-Font2">
                         Acciones
                       </th>
                     </tr>
@@ -295,18 +295,18 @@ export const Tabla= () => {
                         className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap "
                       >
                         <div className="pl-3 text-start">
-                          <div className="text-base font-semibold text-black">
+                          <div className="text-base font-semibold text-black text-Font3">
                             2545242
                           </div>
                         </div>
                       </th>
-                      <td className="px-6 py-4">24242</td>
-                      <td className="px-6 py-4">4242</td>
+                      <td className="px-6 py-4 text-Font3">24242</td>
+                      <td className="px-6 py-4 text-Font3">4242</td>
                       <td className="px-6 py-8 text-center flex justify-evenly content-center">
                         <Link to={`#`} className="font-medium  hover:underline">
                           <button className="btn btn-ver"
                           onClick={() => setShowModalver(true)}>
-                            <span className=" text-blue-500 text-2xl">
+                            <span className=" text-azul-ver text-2xl">
                               <FaRegEye />
                             </span>
                           </button>
@@ -338,7 +338,7 @@ export const Tabla= () => {
                                             <div className="mb-5">
                                               <label
                                                 htmlFor="nproyecto"
-                                                className="mb-3 block text-base font-medium text-[#263562]"
+                                                className="mb-3 block text-base font-medium text-[#263562] text-font2"
                                               >
                                                 Nombre proyecto
                                               </label>
@@ -347,7 +347,7 @@ export const Tabla= () => {
                                                 name="nombre_proyecto"
                                                 id="nombre_proyecto"
                                                 disabled
-                                                className="w-full rounded-xl border border-white bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md"
+                                                className="w-full rounded-xl border border-white bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#263562] focus:shadow-md text-font2"
                                               />
                                             </div>
                                           </div>
@@ -356,7 +356,7 @@ export const Tabla= () => {
                                             <div className="mb-5">
                                               <label
                                                 htmlFor="expediente"
-                                                className="mb-3 block text-base font-medium text-[#263562]"
+                                                className="mb-3 block text-base font-medium text-[#263562] text-font2"
                                               >
                                                 N° Expediente
                                               </label>
@@ -376,7 +376,7 @@ export const Tabla= () => {
                                             <div className="mb-5">
                                               <label
                                                 htmlFor="date"
-                                                className="mb-3 block text-base font-medium text-[#263562]"
+                                                className="mb-3 block text-base font-medium text-[#263562] text-font2"
                                               >
                                                 Descripción
                                               </label>
@@ -395,7 +395,7 @@ export const Tabla= () => {
                                     {/*footer*/}
                                     <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
                                       <button
-                                        className="mt-4 p-3 btn-register rounded-[10px] border"
+                                        className="mt-4 p-3 btn-register rounded-[10px] border text-font2"
                                         type="button"
                                         onClick={() => setShowModalver(false)}
                                       >

@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        Font1:['Work Sans', 'sans-serif'],
-        Font2 :['Arial Black', 'sans-serif'],
-        Font3 :['Century Gothic','sans-serif'],
+        'Font1':['Work Sans', 'sans-serif'],
+        'Font2' :['Arial Black', 'sans-serif'],
+        'Font3' :['Century Gothic','sans-serif'],
 
       },
     },
