@@ -124,7 +124,7 @@ export const Tabla= () => {
                       type="button"
                       onClick={() => setShowModal(true)}
                     >
-                      <span className="text-Negro text-4xl">
+                      <span className="text-green-500 text-4xl">
                         <FaPlusCircle />
                       </span>
                     </button>
@@ -245,26 +245,13 @@ export const Tabla= () => {
                 </label>
                 <div className="relative md:content-center">
                   <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                    <svg
-                      className="icon1 w-5 h-5 text-black dark:text-black"
-                      aria-hidden="true"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        className="icon1"
-                        fillRule="evenodd"
-                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
+                    
                   </div>
                   <input
                     type="text"
                     id="table-search-users"
-                    className="mt-5 rounded-[10px] border p-3 w-80 focus:outline-none border-[#E2231A]"
-                    placeholder="        Ingrese nombre o id de expediente"
+                    className="mt-5 rounded-[10px] border p-3 w-80 focus:outline-none"
+                    placeholder="Ingrese nombre o id de expediente"
                     value={busqueda}
                     onChange={handleChange}
                   />
@@ -306,7 +293,7 @@ export const Tabla= () => {
                         <Link to={`#`} className="font-medium  hover:underline">
                           <button className="btn btn-ver"
                           onClick={() => setShowModalver(true)}>
-                            <span className=" text-azul-ver text-2xl">
+                            <span className=" text-blue-500 text-2xl">
                               <FaRegEye />
                             </span>
                           </button>
