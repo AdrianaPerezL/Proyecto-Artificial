@@ -1,3 +1,5 @@
 npm install react-icons
 npm install sweetalert2
 npm i react-axios
+npm i universal-cookie
+npm install sweetalert2-react-content

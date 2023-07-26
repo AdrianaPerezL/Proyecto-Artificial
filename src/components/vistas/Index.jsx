@@ -1,9 +1,18 @@
 import React from "react";
 import "../../assets/styles/output.css";
 import { useState, useEffect } from "react";
-import Logo from '../../assets/img/logo-artificial-azul.svg'
+import Logo from "../../assets/img/logo-artificial-azul.svg";
+import { Link, useNavigate } from "react-router-dom";
+import Cookies from "universal-cookie";
+import axios from "axios";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 function Index() {
+  const cookies = new Cookies();
+  const navigate = useNavigate();
+  const MySwal = withReactContent(Swal);
+
   useEffect(() => {
     document.title = "Inicio de sesión";
   }, []);
@@ -53,10 +62,63 @@ function Index() {
         return false;
       });
 
-    if (totalValidaciones.length >= 1) {
+    if (totalValidaciones.length >= 2) {
       console.log("Enviar datos al servidor");
+      enviarDatosLogin();
     }
   };
+
+  async function enviarDatosLogin() {
+    const url = "http://127.0.0.1:8000/api/login";
+
+    let config = {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    };
+
+    const UpdateData = {
+      email: formulario.Usuario,
+      password: formulario.Contrasena,
+    };
+
+    try {
+      const resp = await axios.post(url, UpdateData, config);
+      console.log(resp.data, "----------------------------------");
+
+      const token = resp.data.access_token;
+      const validateSession = cookies.set(
+        "tokeApp",
+        { token: token },
+        { path: "/" }
+      );
+
+      Swal.fire("Bienvenido");
+      setTimeout(function () {
+        window.location.href = "/inicio";
+      }, 1500);
+    } catch (err) {
+      console.error(err);
+
+      MySwal.fire({
+        color: "#263562",
+        icon: "error",
+        title: "Inicio de sesión fallido",
+        text: "Usuario no encontrado",
+        width: 400,
+        padding: "3em",
+
+        backdrop: `
+              rgba(0,0,123,0.4)
+              left top
+              no-repeat
+            `,
+      });
+
+      console.error(err.response.data.error);
+    }
+  }
 
   const ValidarInputs = (data) => {
     let errors = [];
@@ -115,11 +177,7 @@ function Index() {
         <form onSubmit={handleLoginSession}>
           <div className="min-w-fit flex-col bg-white px-80 py-20 rounded-[10px] ">
             <div className="mb-8 flex justify-center">
-              <img
-                className="w-50"
-                src={Logo}
-                alt=""
-              />
+              <img className="w-50" src={Logo} alt="" />
             </div>
             <div className="flex flex-col text-sm rounded-lg ">
               <input

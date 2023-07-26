@@ -32,7 +32,7 @@ export const Tabla= () => {
   console.log("Listar datos", datosServidor);
 
   async function getInfo() {
-    const url = "http://127.0.0.1:8000/empleados/empleados"; //AQUI METE LA URL
+    const url = "http://127.0.0.1:8000/api/ver-proyecto/{id}"; //AQUI METE LA URL
 
     let config = {
       headers: {
@@ -79,7 +79,7 @@ export const Tabla= () => {
   //eliminar
   const eliminarEmpleado = async id => {
     try {
-      const url = `http://127.0.0.1:8000/empleados/empleados/${id}`;
+      const url = `http://127.0.0.1:8000/api/eliminar-proyecto/${id}`;
       await axios.delete(url);
       getInfo();
     } catch (err) {
@@ -287,7 +287,7 @@ export const Tabla= () => {
                           </div>
                         </div>
                       </th>
-                      <td className="px-6 py-4 text-Font3">24242</td>
+                      <td className="px-6 py-4 text-Font3">{datosServidor.nombre}</td>
                       <td className="px-6 py-4 text-Font3">4242</td>
                       <td className="px-6 py-8 text-center flex justify-evenly content-center">
                         <Link to={`#`} className="font-medium  hover:underline">
